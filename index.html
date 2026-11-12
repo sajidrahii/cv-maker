@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CV Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <h1>CV Builder</h1>
+  <div class="tools">
+    <label>Template
+      <select id="tpl">
+        <option value="classic">Classic (ATS-friendly)</option>
+        <option value="modern">Modern sidebar</option>
+        <option value="minimal">Minimal</option>
+        <option value="band">Header band</option>
+      </select>
+    </label>
+    <label>Accent <input type="color" id="accent" value="#0f766e"></label>
+    <div class="dl" role="group" aria-label="Download">
+      <button data-fmt="pdf">PDF</button>
+      <button data-fmt="docx">DOCX</button>
+      <button data-fmt="png">PNG</button>
+      <button data-fmt="jpg">JPG</button>
+      <button id="print" class="ghost">Print</button>
+    </div>
+  </div>
+</header>
+<main>
+  <form id="form" autocomplete="off" onsubmit="return false"></form>
+  <section class="desk"><div id="scaler"><div id="cv"></div></div></section>
+</main>
+<p id="msg" role="status"></p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@7.8.2/build/index.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
